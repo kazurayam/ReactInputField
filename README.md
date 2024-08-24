@@ -17,6 +17,9 @@ I developed a Test Case script in Katalon Studio v9.0.0
 
 I ran this. It ran successful. I could see the TC1 could type a text "Hooah" into the `<input>` element rendered by React.js.
 
+![AUT played on](https://kazurayam.github.io/ReactInputField/images/AUT_played_on.png)
+
+
 ## Conclusion
 
 This experiment proves that a Test Case script in Katalon Studio is capable to type arbitrary text into `<input>` element rendered by React.js.

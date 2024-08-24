@@ -60,4 +60,4 @@ WebUI.verifyElementText(toValue, 'Value: Hooah')
 // Switch back to default content'
 WebUI.switchToDefaultContent()
 
-WebUI.closeBrowser()
+//WebUI.closeBrowser()
