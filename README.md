@@ -11,4 +11,16 @@ Here I will present a Katalon Studio project (not Katalon Recorder, browser exte
 
 ![AUT](https://kazurayam.github.io/ReactInputField/images/AUT.png)
 
+I developed a Test Case script in Katalon Studio v9.0.0
+
+- [TC1](./Scripts/TC1/Script1724447592246.groovy)
+
+I ran this. It ran successful. I could see the TC1 could type a text "Hooah" into the `<input>` element rendered by React.js.
+
+## Conclusion
+
+This experiment proves that a Test Case script in Katalon Studio is capable to type arbitrary text into `<input>` element rendered by React.js.
+
+
+
 
