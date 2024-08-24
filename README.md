@@ -13,7 +13,7 @@ Here I will present a Katalon Studio project (not Katalon Recorder, browser exte
 
 I developed a Test Case script in Katalon Studio v9.0.0
 
-- [TC1](./Scripts/TC1/Script1724447592246.groovy)
+- [TC1](https://github.com/kazurayam/ReactInputField/blob/main/Scripts/TC1/Script1724447592246.groovy)
 
 I ran this. It ran successful. I could see the TC1 could type a text "Hooah" into the `<input>` element rendered by React.js.
 
