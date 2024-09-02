@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<title>TestLocalReactInputField</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3" data-tags="">TC1</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:3000<datalist><option>http://localhost:3000</option></datalist></td><td></td></tr>
+<tr><td>waitForElementPresent</td><td>css=input<datalist><option>input</option><option>css=input</option></datalist></td><td>10000</td></tr>
+<tr><td>waitForElementPresent</td><td>css=p<datalist><option>Hooah</option><option>p</option><option>css=p</option></datalist></td><td>10000</td></tr>
+<tr><td>verifyText</td><td>css=p<datalist><option>p</option><option>css=p</option></datalist></td><td>Value: Change me</td></tr>
+<tr><td>type</td><td>css=input<datalist><option>Hooah</option><option>css=input</option></datalist></td><td>Hooah</td></tr>
+<tr><td>verifyText</td><td>css=p<datalist><option>p</option><option>css=p</option></datalist></td><td>Value: Hooah</td></tr>
+<tr><td>close</td><td><datalist></datalist></td><td></td></tr>
+</tbody></table>
+</body>
+</html>
