@@ -27,14 +27,36 @@ In the "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-n
 
 I wanted to reproduce on my machine what's reported by @Rob1 and @guy.mason, and I found the reproduction was not very easy.
 
-In the Katalon User Forum, we see a growing number of topics (questions and bug reports) about E2E testing for React apps. I find a common shortcoming in those topics. They talk about what they found in their own envionment. They never disclose any information for others how to reproduce the incident on their own environment. The fundamental difficulty is that their React apps as AUT (*Application Under Test*) run on their private network, not public to the Internet, so that nobody else can get access to the AUT. Without the UAT in action on our own PC in hands, I can never be sure what's the problem the issuers reported.
+In the Katalon User Forum, we see a growing number of topics (questions and bug reports) about E2E testing for React apps. I find a common shortcoming in those topics. They talk about what they found in their own environment. They tend not to disclose any information for others how to reproduce the incident. Why they don't do that? It is because their React apps as AUT (*Application Under Test*) run inside their private network, is not published to the Internet, so that nobody outside their organization can get access to their AUT.
+
+Without the problem UAT in action on my machine, I can never be sure what's the problem the issuers reported.
 
 ## Proposed Solution
 
 With [Node.js](https://nodejs.org/en) and [Next.js](https://nextjs.org/docs) installed on my machine, I can easily launch a React app locally on my machine.
 
-1. I can edit a TypeScript code [my-next-app/src/app/page.txt](https://github.com/kazurayam/ReactInputField/blob/develop/my-next-app/src/app/page.tsx) which will generate a HTML page in response to a request for http://localhost:3000
+1. I have created a primitive Next.js project in the [my-next-app](https://github.com/kazurayam/ReactInputField/tree/develop/my-next-app). Anyone can check it out to their machine and quickly run it. Also I will explain how to create the same from scratch. It's really easy.
 
-2. I will refer to the official React documentation ["LEARN REACT"](https://react.dev/learn) where I can find lots of sample React codes. I can chose one, copy&paste it into the [my-next-app/src/app/page.txt](https://github.com/kazurayam/ReactInputField/blob/develop/my-next-app/src/app/page.tsx) and bring it in action at http://locahost:3000.
+2. I can edit a TypeScript code [my-next-app/src/app/page.txt](https://github.com/kazurayam/ReactInputField/blob/develop/my-next-app/src/app/page.tsx) which will generate a HTML page in response to a request for http://localhost:3000. With this URL as AUT, I could create and ran E2E tests using any testing tools: Katalon Recorder, Katalon Studio and Playwright.
+
+3. I will refer to the official React documentation ["LEARN REACT"](https://react.dev/learn) where I can find lots of sample React codes. I can chose one, copy&paste it into the [my-next-app/src/app/page.txt](https://github.com/kazurayam/ReactInputField/blob/develop/my-next-app/src/app/page.tsx) and bring it in action at http://locahost:3000.
 
 3. For example, I refered to the source of App.tsx at https://react.dev/learn/typescript#typing-dom-events, titled as "DOM Events", which demonstrates an `<input onChange="...">`. This could be the appropriate AUT to reproduce the "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083)" issue.
+
+## Prerequisites
+
+1. Here I assume that you, the reader of this article, are a well trained JavaScript programmer. You have [Node.js](https://nodejs.org/en) installed in action. You don't need me to explain the source codes in JavaScript/TypeScript.
+2. I also assume that you don't need me to explain how to install Katalon products.
+3. My environment is as follows:
+  - OS: macOS 14.6.1
+  - Terminal interpreter: bash
+  - Node version: v21.6.2
+  - Next.js verion: v14.2.7
+  - Katalon Recorder version: on Chrome, v7.1.0
+  - Katalon Studio version: v9.0.0 Free
+  - Playwright version: ^1.46.1
+3. You should be able reuse [this repository](https://github.com/kazurayam/ReactInputField) on Windows as well, though I haven't examined it.
+
+## How to run the demonstration
+
+## How to make the subprojects from scratch
