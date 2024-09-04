@@ -27,15 +27,15 @@ In the "KR+React issue", @guy.mason wrote
 
 I wanted to reproduce on my machine what's reported by @Rob1 and @guy.mason, and I found it was not very easy.
 
-I find a growing number of topics (questions and bug reports) about E2E testing for React apps in the Katalon User Forum. Now I would argume that there is a common shortcoming in those topics. The topic-posters talk about what they encountered in their own environment, and they tend to disclose no guidance how to reproduce the incident on other environments.
+I find a growing number of topics (questions and bug reports) about E2E testing for React apps in the Katalon User Forum. Now I would argue that there is a common shortcoming in those topics. The topic-posters talk about what they encountered in their own environment, and they tend to disclose no guidance how to reproduce the incident on other environments.
 
 Why they don't do that? I suppse, because their React apps as AUT (*Application Under Test*) run inside their private network so that the posters can not tell others: "Please have a look at this URL on the Internet for this incident".
 
-I would argue, however, I can never understand the problems unless I can see the problem is reproduced with a live URL accessble on my machine. Therefore I wanted to lauche a React-based AUT locally on my machine. How can I do it?
+I would argue, however, I can never understand the problems unless I can see the problem is reproduced with a live URL accessble on my machine. Therefore I want to lauch a React-based AUT locally on my machine. How can I do it?
 
 ## Proposed Solution
 
-With [Node.js](https://nodejs.org/en) installed on my machine, I can easily launch a React app locally on my machine.
+With [Node.js](https://nodejs.org/en) installed, I can easily launch a React app locally on my machine.
 
 1. I will create a Next.js project in any directory on my machine. Next.js lets us generate a new project by a single command on top of Node.js. It's really easy.
 
@@ -367,7 +367,7 @@ test("<input> field in a React app work as expected", async({ page }) => {
 });
 ```
 
-I would evaluate this test code is the best readable and concise amonst all E2E testing tools. The `await` keyword looks beautiful. I think that the `await` keyword is indispensable to test any modern JavaScirpt web apps.
+I would evaluate this test code is the best readable and concise amonst all E2E testing tools that I know. The `await` keyword looks beautiful. I think that the `await` keyword is indispensable to test any modern JavaScirpt web apps.
 
 Now you are ready to run the test by Playwright.
 
@@ -438,7 +438,7 @@ I ran a command `npx playwright show-report`, which opend a new browser window. 
 
 ![PlaywrightTestReport](https://kazurayam.github.io/ReactInputField/images/PlaywrightTestReport.png)
 
-Playwright worked fine.
+Playwright worked very quickly. It reported something interesting, which I am not going to talk about as is off topic.
 
 ## Concolusion
 
