@@ -440,7 +440,7 @@ Playwright worked fine.
 
 ## Concolusion
 
-1. I could build a local server on http://localhost:3000 which can potentially provide any type of React-powered page. Next.js makes every setup jobs easy.
+1. I could build a local server on http://localhost:3000 which can potentially host any React-powered page. Next.js makes every setup jobs easy.
 
 2. Using this local server, I could reproduce the problem of Katalon Recorder as discussed at "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083)".
 
