@@ -440,8 +440,8 @@ Playwright worked fine.
 
 ## Concolusion
 
-I could build a local server on http://localhost:3000 which can potentially provide any type of React-powered page. Next.js makes every setup jobs easy.
+1. I could build a local server on http://localhost:3000 which can potentially provide any type of React-powered page. Next.js makes every setup jobs easy.
 
-Using this local server, I could reproduce the problemn of Katalon Recorder as discussed at "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083)".
+2. Using this local server, I could reproduce the problem of Katalon Recorder as discussed at "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083)".
 
-I enjoyed developing a test using Playwright. Through this experiment, I was impressed that Playwright is the best tool to test modern JavaScript-based apps. I examined a React-based app this time. I guess suppose that Playwright would be good at the apps on Angular and Vue.js as well, though I am not capable to work on those frameworks.
+3. I enjoyed developing a test for React app using Playwright. Through this experiment, I was impressed that Playwright is the best tool to test modern JavaScript-based apps. I suppose that Playwright would be good at Angular and Vue.js as well, though I am not capable to work on those other JavaScript frameworks.
