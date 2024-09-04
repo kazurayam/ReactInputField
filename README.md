@@ -66,7 +66,7 @@ Visit the Release page https://github.com/kazurayam/ReactInputField/releases
 Find the zip file of the latest version; download it; unzip it to create a new directory.
 
 
-### Launching a local web server powered by Next.js and React.js
+### Launching a local web server powered by React.js
 
 I created a new directory `/Users/kazurayam/tmp/ReactInputField-0.1.0`. This is just an example. You can chose wherever you like.
 
@@ -162,7 +162,7 @@ $ tree . -L 3
 
 We are interested in only a single file: **`my-next-app/src/app/page.tsx`**. The `page.tsx` will generate the HTML of the top page when we open http://localhost:3000.
 
-Please open the `my-next-app/src/app/page.tsx` file in your favorite text editor, and **remove all the lines**. Make the `page.tsx` file empty!
+Please open the `my-next-app/src/app/page.tsx` file with your favorite text editor. Remove all the lines. Make the `page.tsx` file empty!
 
 Then, ** you want copy&page the https://github.com/kazurayam/ReactInputField/blob/develop/NextAppSrc/src/app/page.tsx **, which is as follows:
 
@@ -198,7 +198,7 @@ $ pwd
 $ npm run dev
 ```
 
-The server will start up in 10 seconds:
+The server will start up in a few seconds:
 
 ```
 $ npm run dev
@@ -221,7 +221,7 @@ This is what I wanted to see on my machine.
 
 This page is a mimic of a sample in the official React documentation: https://react.dev/learn/typescript#typing-dom-events
 
-As you can easily find, the 2 pages have different style. But both has a `<input>` element and a `<p>` element rendered by React.js. I expect that the mimic page at http://localhost:3000 will function as the original https://react.dev/learn/typescript#typing-dom-events as far as DOM Event is concerned. I would be satisfied with it.
+As you can easily see, the 2 pages have different style. But both has a `<input>` element and a `<p>` element rendered by React.js. The `<input>` has `onChange` event-hander defined, which will update the `<p>` content as soon as you type a text into the `<input>`. I would be able to reproduce the problem discussed at the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083) with this local URL.
 
 
 ## How to make the subprojects from scratch
