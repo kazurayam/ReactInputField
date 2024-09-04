@@ -31,23 +31,23 @@ I find a growing number of topics (questions and bug reports) about E2E testing 
 
 Why they don't do that? I suppse, because their React apps as AUT (*Application Under Test*) run inside their private network so that the posters can not tell others: "Please have a look at this URL on the Internet for this incident".
 
-I would argue, however, I can never understand the problems unless I have the problem AUT in action on my machine. Therefore I wanted to find out a way to create a React-based AUT locally on my machine. How can I do it?
+I would argue, however, I can never understand the problems unless I can see the problem is reproduced with a live URL accessble on my machine. Therefore I wanted to lauche a React-based AUT locally on my machine. How can I do it?
 
 ## Proposed Solution
 
-With [Node.js](https://nodejs.org/en) and [Next.js](https://nextjs.org/docs) installed on my machine, I can easily launch a React app locally on my machine.
+With [Node.js](https://nodejs.org/en) installed on my machine, I can easily launch a React app locally on my machine.
 
-1. I will create a Next.js project anywhere on my machine. Next.js lets us generate a project by a single stroke of shell command on top of Node.js. It's really easy.
+1. I will create a Next.js project in any directory on my machine. Next.js lets us generate a new project by a single command on top of Node.js. It's really easy.
 
 2. I will read the official React documentation ["LEARN REACT"](https://react.dev/learn) where I can find lots of sample React codes. I can choose one, copy & paste it into the `src/app/page.tsx` file in the generated Next.js project. I will bring the local web server in action at http://locahost:3000.
 
-3. For example, I refered to the source of App.tsx at https://react.dev/learn/typescript#typing-dom-events, titled as "DOM Events", which demonstrates an `<input onChange="...">`. This could be the appropriate AUT to reproduce the "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083)" issue.
+3. For example, I refered to the source of App.tsx at https://react.dev/learn/typescript#typing-dom-events, titled as "DOM Events", which demonstrates an `<input onChange="...">`. This could be an appropriate AUT to reproduce the "KR+React issue" issue.
 
-4. Now a React-power web page is availabe at http://localhost:3000. With this URL as AUT, I can create a set of E2E tests using any testing tools. I have created a set of demonstrative codes of Katalon Recorder, Katalon Studio and Playwright.
+4. Thus a React-power web page will be availabe at http://localhost:3000. With this URL as AUT, I can create a set of E2E tests using any testing tools. I have created a set of demonstrative codes of Katalon Recorder, Katalon Studio and Playwright.
 
 ## Prerequisites
 
-1. Here I assume that you, the reader of this article, are a well-trained JavaScript programmer. You have [Node.js](https://nodejs.org/en) installed on your machine. You don't need me to explain any of JavaScript/TypeScript source codes.
+1. Here I assume that you, the reader of this README page, are a well-trained JavaScript programmer. You have [Node.js](https://nodejs.org/en) installed on your machine. You don't need me to explain any of JavaScript/TypeScript source codes.
 2. I assume that you don't need me to explain how to install Katalon Recorder and Katalon Studio.
 3. My environment is as follows:
   - OS: macOS 14.6.1
@@ -57,13 +57,14 @@ With [Node.js](https://nodejs.org/en) and [Next.js](https://nextjs.org/docs) ins
   - Katalon Recorder version: on Chrome, v7.1.0
   - Katalon Studio version: v9.0.0 Free
   - Playwright version: ^1.46.1
-3. You should be able reuse [this repository](https://github.com/kazurayam/ReactInputField) on Windows as well, though I haven't examined it.
+
+I think that you should be able reuse the description here on Windows as well, though I haven't examined it.
 
 ## Aquiring the demonstration zip
 
 Visit the Release page https://github.com/kazurayam/ReactInputField/releases
 
-Find the zip file of the latest version; download it; unzip it to create a new directory.
+Find the zip file of the latest version; download it; unzip it into any directory.
 
 
 ## Launching a local web server powered by React.js
@@ -80,6 +81,8 @@ docs			e2e_KatalonStudio
 ```
 
 Now I will create a new Next.js project named `my-next-app`. It is done by a single command.
+
+>The `npx` command is bundled in Node.js. You MUST have Node.js installed on your machine.
 
 ```
 $ npx create-react-app my-next-app
@@ -160,11 +163,11 @@ $ tree . -L 3
 └── tsconfig.json
 ```
 
-We are interested in only a single file: **`my-next-app/src/app/page.tsx`**. The `page.tsx` will generate the HTML of the top page when we open http://localhost:3000.
+We are interested in only a single file: **`my-next-app/src/app/page.tsx`**. The `page.tsx` will generate the HTML of the top page when we open http://localhost:3000 in a browser.
 
-Please open the `my-next-app/src/app/page.tsx` file with your favorite text editor. Remove all the lines. Make the `page.tsx` file empty!
+Please open the `my-next-app/src/app/page.tsx` file with your favorite text editor. *Remove all the lines. Make the `page.tsx` file empty!*
 
-Then, ** you want copy&page the https://github.com/kazurayam/ReactInputField/blob/develop/NextAppSrc/src/app/page.tsx **, which is as follows:
+Then, you want to copy and paste [page.txt](https://github.com/kazurayam/ReactInputField/blob/develop/NextAppSrc/src/app/page.tsx) I created, which is as follows:
 
 ```
 'use client';
