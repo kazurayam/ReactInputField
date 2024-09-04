@@ -367,7 +367,7 @@ test("<input> field in a React app work as expected", async({ page }) => {
 });
 ```
 
-I would evaluate this test code is best readable and concise. The `await` keyword looks beautiful. I think that the `await` keyword is indispensable to test the modern JavaScirpt apps.
+I would evaluate this test code is the best readable and concise amonst all E2E testing tools. The `await` keyword looks beautiful. I think that the `await` keyword is indispensable to test the modern JavaScirpt apps.
 
 Now you are ready to run the test by Playwright.
 
