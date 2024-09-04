@@ -10,7 +10,7 @@
 
 1. The [e2e_KatalonRecorder](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonRecorder) subproject contains a serialized test code for [Katalon Recorder](https://katalon.com/katalon-recorder-ide), that targets the URL http://localhost:3000 .
 2. The [e2e_KatalonStudio](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonStudio) subproject contains a [Katalon Studio](https://katalon.com/katalon-studio) project that targets the same local URL.
-3. The [e2e_Playwright](https://github.com/kazurayam/ReactInputField/tree/develop/testby_playwright) subproject is a [Playwright](https://playwright.dev/) project that targets the same local URL.
+3. The [e2e_Playwright](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_Playwright) subproject is a [Playwright](https://playwright.dev/) project that targets the same local URL.
 4. The [NextAppSrc](https://github.com/kazurayam/ReactInputField/tree/develop/NextAppSrc) subproject contains a single TypeScript `page.tsx`. You will create a Next.js project by a single command provided by Next.js and then you will copy & paste this `page.tsx` into the newly created project.
 
 Provided that you have setup your machine with [Node.js](https://nodejs.org/en) and other external resources appropriately, you can reproduce a problem discussed in the Katalon user forum at:
@@ -27,26 +27,26 @@ In the "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-n
 
 I wanted to reproduce on my machine what's reported by @Rob1 and @guy.mason, and I found the reproduction was not very easy.
 
-In the Katalon User Forum, we see a growing number of topics (questions and bug reports) about E2E testing for React apps. I find a common shortcoming in those topics. They talk about what they found in their own environment. They tend not to disclose any information for others how to reproduce the incident. Why they don't do that? It is because their React apps as AUT (*Application Under Test*) run inside their private network, is not published to the Internet, so that nobody outside their organization can get access to their AUT.
+In the Katalon User Forum, we see a growing number of topics (questions and bug reports) about E2E testing for React apps. I find a common shortcoming in those topics. They talk about what they encountered in their own environment. They tend to disclose no information that enable others to reproduce the incident. Why they don't do that? It is because their React apps as AUT (*Application Under Test*) run inside their private network, is not published to the Internet, so that nobody outside their organization can get access to their AUT.
 
-Without the problem UAT in action on my machine, I can never be sure what's the problem the issuers reported.
+I would argue, however, I can never understand what the issuers wrote about the problems in testing React apps unless I have the problem AUT in action on my machine. Therefore I wanted to find out a way to create a mimic of the AUT locally on my machine. But how can I do it?
 
 ## Proposed Solution
 
 With [Node.js](https://nodejs.org/en) and [Next.js](https://nextjs.org/docs) installed on my machine, I can easily launch a React app locally on my machine.
 
-1. I have created a primitive Next.js project in the [my-next-app](https://github.com/kazurayam/ReactInputField/tree/develop/my-next-app). Anyone can check it out to their machine and quickly run it. Also I will explain how to create the same from scratch. It's really easy.
+1. I will create a Next.js project anywhere on my machine. Next.js lets us generate a project by a single stroke of shell command on top of Node.js. It's really easy.
 
-2. I can edit a TypeScript code [my-next-app/src/app/page.txt](https://github.com/kazurayam/ReactInputField/blob/develop/my-next-app/src/app/page.tsx) which will generate a HTML page in response to a request for http://localhost:3000. With this URL as AUT, I could create and ran E2E tests using any testing tools: Katalon Recorder, Katalon Studio and Playwright.
-
-3. I will refer to the official React documentation ["LEARN REACT"](https://react.dev/learn) where I can find lots of sample React codes. I can chose one, copy&paste it into the [my-next-app/src/app/page.txt](https://github.com/kazurayam/ReactInputField/blob/develop/my-next-app/src/app/page.tsx) and bring it in action at http://locahost:3000.
+2. I will read the official React documentation ["LEARN REACT"](https://react.dev/learn) where I can find lots of sample React codes. I can choose one, copy & paste it into the `src/app/page.tsx` file in the generated Next.js project. I will bring the local web server in action at http://locahost:3000.
 
 3. For example, I refered to the source of App.tsx at https://react.dev/learn/typescript#typing-dom-events, titled as "DOM Events", which demonstrates an `<input onChange="...">`. This could be the appropriate AUT to reproduce the "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083)" issue.
 
+4. Now a React-power web page is availabe at http://localhost:3000. With this URL as AUT, I can create a set of E2E tests using any testing tools. I have created a set of demonstrative codes of Katalon Recorder, Katalon Studio and Playwright.
+
 ## Prerequisites
 
-1. Here I assume that you, the reader of this article, are a well trained JavaScript programmer. You have [Node.js](https://nodejs.org/en) installed in action. You don't need me to explain the source codes in JavaScript/TypeScript.
-2. I also assume that you don't need me to explain how to install Katalon products.
+1. Here I assume that you, the reader of this article, are a well-trained JavaScript programmer. You have [Node.js](https://nodejs.org/en) installed on your machine. You don't need me to explain any of JavaScript/TypeScript source codes.
+2. I assume that you don't need me to explain how to install Katalon Recorder and Katalon Studio.
 3. My environment is as follows:
   - OS: macOS 14.6.1
   - Terminal interpreter: bash
