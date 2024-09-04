@@ -41,7 +41,7 @@ With [Node.js](https://nodejs.org/en) installed, I can easily launch a React app
 
 2. I will read the official React documentation ["LEARN REACT"](https://react.dev/learn) where I can find lots of sample React codes. I can choose one, copy & paste it into the `src/app/page.tsx` file in the generated Next.js project. I will bring the local web server in action at http://locahost:3000.
 
-3. For example, I refered to the source of App.tsx at https://react.dev/learn/typescript#typing-dom-events, titled as "DOM Events", which demonstrates an `<input onChange="...">`. This could be an appropriate AUT to reproduce the "KR+React issue" issue.
+3. For example, I refered to the source of App.tsx at https://react.dev/learn/typescript#typing-dom-events, titled as "DOM Events", which demonstrates an `<input onChange="...">`. This could be an appropriate AUT to reproduce the "KR+React issue".
 
 4. Thus a React-power web page will be availabe at http://localhost:3000. With this URL as AUT, I can create a set of E2E tests using any testing tools. I have created a set of demonstrative codes of Katalon Recorder, Katalon Studio and Playwright.
 
