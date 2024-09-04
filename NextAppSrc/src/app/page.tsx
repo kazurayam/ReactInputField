@@ -1,5 +1,7 @@
 'use client';
 
+// original: https://react.dev/learn/typescript#typing-dom-events
+
 import { useState } from 'react';
 
 export default function Form() {

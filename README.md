@@ -59,4 +59,101 @@ With [Node.js](https://nodejs.org/en) and [Next.js](https://nextjs.org/docs) ins
 
 ## How to run the demonstration
 
+```
+$ pwd
+/Users/kazurayam/tmp/ReactInputField-0.1.0
+
+$ ls
+README.md		e2e_KatalonRecorder	e2e_Playwright
+docs			e2e_KatalonStudio
+```
+
+```
+$ npx create-react-app my-next-app
+✔ Would you like to use TypeScript? … No / Yes
+✔ Would you like to use ESLint? … No / Yes
+✔ Would you like to use Tailwind CSS? … No / Yes
+✔ Would you like to use `src/` directory? … No / Yes
+✔ Would you like to use App Router? (recommended) … No / Yes
+✔ Would you like to customize the default import alias (@/*)? … No / Yes
+
+```
+
+The "npx create-react-app" command too a few minuites to finish.
+
+```
+Creating a new Next.js app in /Users/kazuakiurayama/tmp/ReactInputField-0.1.0/my-next-app.
+
+Using npm.
+
+Initializing project with template: app-tw
+
+
+Installing dependencies:
+- react
+- react-dom
+- next
+
+Installing devDependencies:
+- typescript
+- @types/node
+- @types/react
+- @types/react-dom
+- postcss
+- tailwindcss
+- eslint
+- eslint-config-next
+
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated @humanwhocodes/config-array@0.11.14: Use @eslint/config-array instead
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+added 363 packages, and audited 364 packages in 1m
+
+136 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Initialized a git repository.
+
+Success! Created my-next-app at /Users/kazurayam/tmp/ReactInputField-0.1.0/my-next-app
+```
+
+I found a new directory `my-next-app` was created. The directory contains a lot of files and subdirectories, but you do not have to worry about the volume:
+
+```
+$ pwd
+/Users/kazurayam/tmp/ReactInputField-0.1.0/my-next-app
+$ tree . -L 3
+.
+├── next-env.d.ts
+├── next.config.mjs
+├── node_modules
+...
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+...
+├── src
+│   └── app
+│       ├── favicon.ico
+│       ├── globals.css
+│       ├── layout.tsx
+│       └── page.tsx    <=== THIS IS IT!
+├── tailwind.config.ts
+└── tsconfig.json
+```
+
+We are interested in only a single file: **`my-next-app/src/app/page.tsx`**
+
+Please open the `my-next-app/src/app/page.tsx` file in your favorite text editor, and remove all the lines. Make it empty!
+
+Then you want copy&page the []()
+
+
+
+
 ## How to make the subprojects from scratch
