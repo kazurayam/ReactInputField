@@ -10,8 +10,8 @@
 
 1. The [e2e_KatalonRecorder](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonRecorder) subproject contains a serialized test code for [Katalon Recorder](https://katalon.com/katalon-recorder-ide), that targets the URL http://localhost:3000 .
 2. The [e2e_KatalonStudio](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonStudio) subproject contains a [Katalon Studio](https://katalon.com/katalon-studio) project that targets the same local URL.
-3. The [e2e_Playwright](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_Playwright) subproject is a [Playwright](https://playwright.dev/) project that targets the same local URL.
-4. The [NextAppSrc](https://github.com/kazurayam/ReactInputField/tree/develop/NextAppSrc) subproject contains a single TypeScript `page.tsx`. Later you will create a Next.js project, and then you will copy & paste this `page.tsx` into the newly created project.
+3. The [NextAppSrc](https://github.com/kazurayam/ReactInputField/tree/develop/NextAppSrc) subdirectory contains a single TypeScript `page.tsx`. Later you will create a Next.js project, and then you will copy & paste this `page.tsx` into the newly created Next.js project.
+4. The [PlaywrightTestSrc](https://github.com/kazurayam/ReactInputField/tree/develop/PlaywrightTestSrc) subproject contains a single TypeScript `page.spec.ts`. Later will will create a Playwright project, and then you will copy & page this `page.spec.ts` into the newly created Playwright project.
 
 Provided that you have setup your machine with [Node.js](https://nodejs.org/en) and other external resources appropriately, you can reproduce a problem on your machine, which was discussed in the Katalon user forum at:
 
@@ -58,7 +58,7 @@ With [Node.js](https://nodejs.org/en) installed on my machine, I can easily laun
   - Katalon Studio version: v9.0.0 Free
   - Playwright version: ^1.46.1
 
-I think that you should be able reuse the description here on Windows as well, though I haven't examined it.
+I think that you should be able apply the description here on Windows as well, though I haven't examined it.
 
 ## Aquiring the demonstration zip
 
@@ -236,7 +236,7 @@ When I ran this test, the test failed.
 
 ![KR issue](https://kazurayam.github.io/ReactInputField/images/KatalonRecorderIssue.png)
 
-Why? Katalon Recorder sent a text "Hooah" into the `<input onChange="...">` element, which seems to be accepted. I would expect the same text is trasfered into the sibling `<p>` element. But, apparently the `onChange` event handler was not triggered.
+Why? Katalon Recorder sent a text "Hooah" into the `<input onChange="...">` element, which seems to be accepted. I would expect the same text is trasfered into the sibling `<p>` element. But, apparently the `onChange` event handler was not fired. I have no idea why.
 
 So, I agree with the original poster of the the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083). Katalon Recorder has a problem.
 
