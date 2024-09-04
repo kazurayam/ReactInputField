@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
-   <description>Hooah</description>
+   <description></description>
    <name>ReactInputField</name>
    <tag></tag>
    <UUID>a20b3517-10ea-4e89-96ca-0cfe9af65e3e</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>C:\Users\uraya\github-kazurayam\ReactInputField\ReactInputField.prj</projectFileLocation>
+   <projectFileLocation>/Users/kazuakiurayama/github/ReactInputField/using_katalonstudio/ReactInputField.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
