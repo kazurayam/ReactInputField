@@ -263,7 +263,7 @@ $ mkdir e2e_Playwright
 You want to cd into the directory and create a new Playwright testing project
 
 ```
-$ cd e2e_playwright
+$ cd e2e_Playwright
 $ npm init playwright@latest
 ```
 
