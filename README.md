@@ -57,16 +57,14 @@ With [Node.js](https://nodejs.org/en) and [Next.js](https://nextjs.org/docs) ins
   - Playwright version: ^1.46.1
 3. You should be able reuse [this repository](https://github.com/kazurayam/ReactInputField) on Windows as well, though I haven't examined it.
 
-## How to run the demonstration
-
-### Download the demonstration zip
+## Aquiring the demonstration zip
 
 Visit the Release page https://github.com/kazurayam/ReactInputField/releases
 
 Find the zip file of the latest version; download it; unzip it to create a new directory.
 
 
-### Launching a local web server powered by React.js
+## Launching a local web server powered by React.js
 
 I created a new directory `/Users/kazurayam/tmp/ReactInputField-0.1.0`. This is just an example. You can chose wherever you like.
 
@@ -223,5 +221,221 @@ This page is a mimic of a sample in the official React documentation: https://re
 
 As you can easily see, the 2 pages have different style. But both has a `<input>` element and a `<p>` element rendered by React.js. The `<input>` has `onChange` event-hander defined, which will update the `<p>` content as soon as you type a text into the `<input>`. I would be able to reproduce the problem discussed at the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083) with this local URL.
 
+## Reproducing the problem of Katalon Recorder
 
-## How to make the subprojects from scratch
+Now that the AUT http://localhost:3000 is running on my machine, I will try to reproduce the problem reported at
+the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083).
+
+I have developed a test script for Katalon Recorder:
+
+- [KRtest](https://github.com/kazurayam/ReactInputField/blob/develop/e2e_KatalonRecorder/TestLocalReactInputField.krecorder)
+
+When I ran this test, the test failed. Why? Katalon Recorder sent a text "Hooah" into the `<input onChange="...">` element, which seems to be accepted. I would expect the same text is trasfered into the sibling `<p>` element. But, apparently the `onChange` event handler was not triggered.
+
+So, I agree with the original poster of the the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083). Katalon Recorder has a problem.
+
+## Testing the same AUT using Katalon Studio.
+
+I made a Test Case for Katalon Studio.
+
+- [Test Cases/Scripts/TC1](https://github.com/kazurayam/ReactInputField/blob/develop/e2e_KatalonStudio/Scripts/TC1/Script1724447592246.groovy)
+
+This test runs fine. No issue. Katalon Studio works differently from Katalon Recorder.
+
+## Testing the same AUT using Playwright.
+
+Here I would introduce you to another E2E testing tool [Playwright](https://playwright.dev/).
+
+You want to create a directory where you locate a new Playwright project.
+
+```
+$ pwd
+~/tmp/ReactInputField-0.1.0/
+$ mkdir e2e_Playwright
+```
+
+You want to cd into the directory and create a new Playwright testing project
+
+```
+$ cd e2e_playwright
+$ npm init playwright@latest
+```
+
+It will take a few minutes:
+
+```
+$ npm init playwright@latest
+
+> npx
+> create-playwright
+
+Getting started with writing end-to-end tests with Playwright:
+Initializing project in '.'
+✔ Do you want to use TypeScript or JavaScript? · TypeScript
+✔ Where to put your end-to-end tests? · tests
+✔ Add a GitHub Actions workflow? (y/N) · false
+✔ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · true
+
+Initializing NPM project (npm init -y)…
+Wrote to /Users/kazurayam/tmp/ReactInputField-0.1.0/e2e_Playwright/package.json:
+
+{
+  "name": "e2e_playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+Installing Playwright Test (npm install --save-dev @playwright/test)…
+
+added 3 packages, and audited 4 packages in 9s
+
+found 0 vulnerabilities
+Installing Types (npm install --save-dev @types/node)…
+
+added 3 packages, and audited 7 packages in 2s
+
+found 0 vulnerabilities
+Writing playwright.config.ts.
+Writing tests/example.spec.ts.
+Writing tests-examples/demo-todo-app.spec.ts.
+Writing package.json.
+Downloading browsers (npx playwright install)…
+✔ Success! Created a Playwright Test project at /Users/kazurayam/tmp/ReactInputField-0.1.0/e2e_Playwright
+
+Inside that directory, you can run several commands:
+
+  npx playwright test
+    Runs the end-to-end tests.
+
+  npx playwright test --ui
+    Starts the interactive UI mode.
+
+  npx playwright test --project=chromium
+    Runs the tests only on Desktop Chrome.
+
+  npx playwright test example
+    Runs the tests in a specific file.
+
+  npx playwright test --debug
+    Runs the tests in debug mode.
+
+  npx playwright codegen
+    Auto generate tests with Codegen.
+
+We suggest that you begin by typing:
+
+    npx playwright test
+
+And check out the following files:
+  - ./tests/example.spec.ts - Example end-to-end test
+  - ./tests-examples/demo-todo-app.spec.ts - Demo Todo App end-to-end tests
+  - ./playwright.config.ts - Playwright Test configuration
+
+Visit https://playwright.dev/docs/intro for more information. ✨
+
+Happy hacking! 🎭
+```
+
+In the `e2e_Playwright` directory, there are lots of files and directories automatically layed out, but you do not need to worry about them.
+
+You want to add a new file [e2e_Playwright/tests/page.specs.ts](https://github.com/kazurayam/ReactInputField/blob/develop/e2e_Playwright/tests/page.spec.ts). The content is as follows:
+
+```
+import test, { expect } from "playwright/test";
+
+test("<input> field in a React app work as expected", async({ page }) => {
+  // visit the target URL
+  await page.goto("http://localhost:3000");
+  await expect(page.locator("p")).toContainText("Value: Change me");
+  await page.locator("input").fill("Hooah");
+  await expect(page.locator("p")).toContainText("Value: Hooah");
+  await page.close();
+});
+```
+
+Now you are ready to run the test by Playwright.
+
+Just make sure that the local server is up and running at http://localhost:3000
+
+Then you want to  run a command:
+
+```
+$ pwd
+~/tmp/ReactInputField/e2e_Playwright
+
+$ npx playwright test
+```
+
+This command executes all the tests in the `e2e_Playwright/tests/` directory. I got the following result.
+
+```
+$ npx playwright test
+
+
+Running 9 tests using 2 workers
+[3/9] …omium] › page.spec.ts:3:5 › <input> field in a React app work as expecte[6/9] …refox] › page.spec.ts:3:5 › <input> field in a React app work as expecte[9/9] …ebkit] › page.spec.ts:3:5 › <input> field in a React app work as expecte  1) [webkit] › page.spec.ts:3:5 › <input> field in a React app work as expected
+
+    Error: Timed out 5000ms waiting for expect(locator).toContainText(expected)
+
+    Locator: locator('p')
+    Expected string: "Value: Hooah"
+    Received string: "Value: Change me"
+    Call log:
+      - expect.toContainText with timeout 5000ms
+      - waiting for locator('p')
+      -   locator resolved to <p>…</p>
+      -   unexpected value "Value: Change me"
+      -   locator resolved to <p>…</p>
+      -   unexpected value "Value: Change me"
+      -   locator resolved to <p>…</p>
+      -   unexpected value "Value: Change me"
+      -   locator resolved to <p>…</p>
+      -   unexpected value "Value: Change me"
+      -   locator resolved to <p>…</p>
+      -   unexpected value "Value: Change me"
+      -   locator resolved to <p>…</p>
+      -   unexpected value "Value: Change me"
+      -   locator resolved to <p>…</p>
+      -   unexpected value "Value: Change me"
+      -   locator resolved to <p>…</p>
+      -   unexpected value "Value: Change me"
+
+
+       6 |   await expect(page.locator("p")).toContainText("Value: Change me");
+       7 |   await page.locator("input").fill("Hooah");
+    >  8 |   await expect(page.locator("p")).toContainText("Value: Hooah");
+         |                                   ^
+       9 |   await page.close();
+      10 | });
+      11 |
+
+        at /Users/kazuakiurayama/tmp/ReactInputField-0.1.0/e2e_Playwright/tests/page.spec.ts:8:35
+
+  1 failed
+    [webkit] › page.spec.ts:3:5 › <input> field in a React app work as expected
+  8 passed (28.4s)
+
+  Serving HTML report at http://localhost:9323. Press Ctrl+C to quit.
+```
+
+I ran a command `npx playwright show-report`, which opend a new browser window. In their I saw the following test report.
+
+![PlaywrightTestReport](https://kazurayam.github.io/ReactInputField/images/PlaywrightTestReport.png)
+
+Playwright worked fine.
+
+## Concolusion
+
+I could build a local server on http://localhost:3000 which can potentially provide any type of React-powered page. Next.js makes every setup jobs easy.
+
+Using this local server, I could reproduce the problemn of Katalon Recorder as discussed at "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083)".
+
+I enjoyed developing a test using Playwright. Through this experiment, I was impressed that Playwright is the best tool to test modern JavaScript-based apps. I examined a React-based app this time. I guess suppose that Playwright would be good at the apps on Angular and Vue.js as well, though I am not capable to work on those frameworks.
