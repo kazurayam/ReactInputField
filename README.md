@@ -11,9 +11,9 @@
 1. The [e2e_KatalonRecorder](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonRecorder) subproject contains a serialized test code for [Katalon Recorder](https://katalon.com/katalon-recorder-ide), that targets the URL http://localhost:3000 .
 2. The [e2e_KatalonStudio](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonStudio) subproject contains a [Katalon Studio](https://katalon.com/katalon-studio) project that targets the same local URL.
 3. The [e2e_Playwright](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_Playwright) subproject is a [Playwright](https://playwright.dev/) project that targets the same local URL.
-4. The [NextAppSrc](https://github.com/kazurayam/ReactInputField/tree/develop/NextAppSrc) subproject contains a single TypeScript `page.tsx`. You will create a Next.js project by a single command provided by Next.js and then you will copy & paste this `page.tsx` into the newly created project.
+4. The [NextAppSrc](https://github.com/kazurayam/ReactInputField/tree/develop/NextAppSrc) subproject contains a single TypeScript `page.tsx`. Later you will create a Next.js project, and then you will copy & paste this `page.tsx` into the newly created project.
 
-Provided that you have setup your machine with [Node.js](https://nodejs.org/en) and other external resources appropriately, you can reproduce a problem discussed in the Katalon user forum at:
+Provided that you have setup your machine with [Node.js](https://nodejs.org/en) and other external resources appropriately, you can reproduce a problem on your machine, which was discussed in the Katalon user forum at:
 
 - [Serious Recorder Bug - does not work with react](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083)
 
@@ -21,15 +21,17 @@ I would refer to this topic as "[KR+React issue](https://forum.katalon.com/t/ser
 
 ## Problem to solve
 
-In the "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/14308/7)", @guy.mason wrote
+In the "KR+React issue", @guy.mason wrote
 
 >I personally use Katalon Recorder v7 with a React application, and it works for the greater majority of scenarios, but there is a particular text input field that where the field should automatically trigger an event when the contents changes, but presently doesn’t.
 
-I wanted to reproduce on my machine what's reported by @Rob1 and @guy.mason, and I found the reproduction was not very easy.
+I wanted to reproduce on my machine what's reported by @Rob1 and @guy.mason, and I found it was not very easy.
 
-In the Katalon User Forum, we see a growing number of topics (questions and bug reports) about E2E testing for React apps. I find a common shortcoming in those topics. They talk about what they encountered in their own environment. They tend to disclose no information that enable others to reproduce the incident. Why they don't do that? It is because their React apps as AUT (*Application Under Test*) run inside their private network, is not published to the Internet, so that nobody outside their organization can get access to their AUT.
+I find a growing number of topics (questions and bug reports) about E2E testing for React apps in the Katalon User Forum. Now I would argume that there is a common shortcoming in those topics. The topic-posters talk about what they encountered in their own environment, and they tend to disclose no guidance how to reproduce the incident on other environments.
 
-I would argue, however, I can never understand what the issuers wrote about the problems in testing React apps unless I have the problem AUT in action on my machine. Therefore I wanted to find out a way to create a mimic of the AUT locally on my machine. But how can I do it?
+Why they don't do that? I suppse, because their React apps as AUT (*Application Under Test*) run inside their private network so that the posters can not tell others: "Please have a look at this URL on the Internet for this incident".
+
+I would argue, however, I can never understand the problems unless I have the problem AUT in action on my machine. Therefore I wanted to find out a way to create a React-based AUT locally on my machine. How can I do it?
 
 ## Proposed Solution
 
