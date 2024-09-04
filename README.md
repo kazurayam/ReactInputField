@@ -6,12 +6,12 @@
 
 ## What is this?
 
-[This GitHub repository](https://github.com/kazurayam/ReactInputField) contains 4 subprojects:
+[This GitHub repository](https://github.com/kazurayam/ReactInputField) contains 4 subdirectories:
 
-1. The [my-next-app](https://github.com/kazurayam/ReactInputField/tree/develop/my-next-app) subproject is a [Next.js](https://nextjs.org/docs) project that can launch a local web server with a React.js page at the URL of http://localhost:3000
-2. The [e2e_KatalonRecorder](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonRecorder) subproject contains a serialized test code for [Katalon Recorder](https://katalon.com/katalon-recorder-ide), that targets the URL lauched by the my-next-app project.
-3. The [e2e_KatalonStudio](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonStudio) subproject contains a [Katalon Studio](https://katalon.com/katalon-studio) project that targets the same local URL.
-4. The [e2e_Playwright](https://github.com/kazurayam/ReactInputField/tree/develop/testby_playwright) subproject is a [Playwright](https://playwright.dev/) project that targets the same local URL.
+1. The [e2e_KatalonRecorder](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonRecorder) subproject contains a serialized test code for [Katalon Recorder](https://katalon.com/katalon-recorder-ide), that targets the URL http://localhost:3000 .
+2. The [e2e_KatalonStudio](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonStudio) subproject contains a [Katalon Studio](https://katalon.com/katalon-studio) project that targets the same local URL.
+3. The [e2e_Playwright](https://github.com/kazurayam/ReactInputField/tree/develop/testby_playwright) subproject is a [Playwright](https://playwright.dev/) project that targets the same local URL.
+4. The [NextAppSrc](https://github.com/kazurayam/ReactInputField/tree/develop/NextAppSrc) subproject contains a single TypeScript `page.tsx`. You will create a Next.js project by a single command provided by Next.js and then you will copy & paste this `page.tsx` into the newly created project.
 
 Provided that you have setup your machine with [Node.js](https://nodejs.org/en) and other external resources appropriately, you can reproduce a problem discussed in the Katalon user forum at:
 
