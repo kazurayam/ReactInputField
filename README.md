@@ -58,7 +58,7 @@ With [Node.js](https://nodejs.org/en) installed, I can easily launch a React app
   - Katalon Studio version: v9.0.0 Free
   - Playwright version: ^1.46.1
 
-I think that you should be able apply the description here on Windows as well, though I haven't examined it.
+I think that you should be able to apply the description here to Windows as well, though I haven't examined it.
 
 ## Aquiring the demonstration zip
 
