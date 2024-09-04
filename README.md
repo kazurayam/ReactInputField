@@ -35,7 +35,7 @@ I would argue, however, I can never understand the problems unless I can see the
 
 ## Proposed Solution
 
-With [Node.js](https://nodejs.org/en) installed, I can easily launch a React app locally on my machine.
+With [Node.js](https://nodejs.org/en) installed, I can easily launch a React app locally.
 
 1. I will create a Next.js project on my machine. Next.js lets us generate a new project by a single command on top of Node.js. It's really easy.
 
