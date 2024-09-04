@@ -434,7 +434,7 @@ Running 9 tests using 2 workers
   Serving HTML report at http://localhost:9323. Press Ctrl+C to quit.
 ```
 
-I ran a command `npx playwright show-report`, which opend a new browser window. In their I saw the following test report.
+I ran a command `npx playwright show-report`, which opend a new browser window where I saw the following test report.
 
 ![PlaywrightTestReport](https://kazurayam.github.io/ReactInputField/images/PlaywrightTestReport.png)
 
