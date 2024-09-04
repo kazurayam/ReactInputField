@@ -367,6 +367,8 @@ test("<input> field in a React app work as expected", async({ page }) => {
 });
 ```
 
+I would evaluate this test code is best readable and concise. The `await` keyword looks beautiful. I think that the `await` keyword is indispensable to test the modern JavaScirpt apps.
+
 Now you are ready to run the test by Playwright.
 
 Just make sure that the local server is up and running at http://localhost:3000
