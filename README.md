@@ -37,7 +37,7 @@ I would argue, however, I can never understand the problems unless I can see the
 
 With [Node.js](https://nodejs.org/en) installed, I can easily launch a React app locally on my machine.
 
-1. I will create a Next.js project in any directory on my machine. Next.js lets us generate a new project by a single command on top of Node.js. It's really easy.
+1. I will create a Next.js project on my machine. Next.js lets us generate a new project by a single command on top of Node.js. It's really easy.
 
 2. I will read the official React documentation ["LEARN REACT"](https://react.dev/learn) where I can find lots of sample React codes. I can choose one, copy & paste it into the `src/app/page.tsx` file in the generated Next.js project. I will bring the local web server in action at http://locahost:3000.
 
