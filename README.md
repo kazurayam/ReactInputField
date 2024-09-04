@@ -59,6 +59,17 @@ With [Node.js](https://nodejs.org/en) and [Next.js](https://nextjs.org/docs) ins
 
 ## How to run the demonstration
 
+### Download the demonstration zip
+
+Visit the Release page https://github.com/kazurayam/ReactInputField/releases
+
+Find the zip file of the latest version; download it; unzip it to create a new directory.
+
+
+### Launching a local web server powered by Next.js and React.js
+
+I created a new directory `/Users/kazurayam/tmp/ReactInputField-0.1.0`. This is just an example. You can chose wherever you like.
+
 ```
 $ pwd
 /Users/kazurayam/tmp/ReactInputField-0.1.0
@@ -68,18 +79,20 @@ README.md		e2e_KatalonRecorder	e2e_Playwright
 docs			e2e_KatalonStudio
 ```
 
+Now I will create a new Next.js project named `my-next-app`. It is done by a single command.
+
 ```
 $ npx create-react-app my-next-app
+
 ✔ Would you like to use TypeScript? … No / Yes
 ✔ Would you like to use ESLint? … No / Yes
 ✔ Would you like to use Tailwind CSS? … No / Yes
 ✔ Would you like to use `src/` directory? … No / Yes
 ✔ Would you like to use App Router? (recommended) … No / Yes
 ✔ Would you like to customize the default import alias (@/*)? … No / Yes
-
 ```
 
-The "npx create-react-app" command too a few minuites to finish.
+The "npx create-react-app" command takes a few minuites to finish.
 
 ```
 Creating a new Next.js app in /Users/kazuakiurayama/tmp/ReactInputField-0.1.0/my-next-app.
@@ -121,7 +134,7 @@ Initialized a git repository.
 Success! Created my-next-app at /Users/kazurayam/tmp/ReactInputField-0.1.0/my-next-app
 ```
 
-I found a new directory `my-next-app` was created. The directory contains a lot of files and subdirectories, but you do not have to worry about the volume:
+I found a new directory `my-next-app` was created. The directory contains a lot of files and subdirectories, but we do not worry about them much:
 
 ```
 $ pwd
@@ -147,13 +160,68 @@ $ tree . -L 3
 └── tsconfig.json
 ```
 
-We are interested in only a single file: **`my-next-app/src/app/page.tsx`**
+We are interested in only a single file: **`my-next-app/src/app/page.tsx`**. The `page.tsx` will generate the HTML of the top page when we open http://localhost:3000.
 
-Please open the `my-next-app/src/app/page.tsx` file in your favorite text editor, and remove all the lines. Make it empty!
+Please open the `my-next-app/src/app/page.tsx` file in your favorite text editor, and **remove all the lines**. Make the `page.tsx` file empty!
 
-Then you want copy&page the []()
+Then, ** you want copy&page the https://github.com/kazurayam/ReactInputField/blob/develop/NextAppSrc/src/app/page.tsx **, which is as follows:
 
+```
+'use client';
 
+// original: https://react.dev/learn/typescript#typing-dom-events
+
+import { useState } from 'react';
+
+export default function Form() {
+  const [value, setValue] = useState('Change me');
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setValue(event.currentTarget.value);
+  }
+
+  return (
+    <>
+      <input value={value} onChange={handleChange}/>
+      <p>Value: {value}</p>
+    </>
+  );
+}
+```
+
+Now we are ready to start the local web server. Run the following command:
+
+```
+$ pwd
+/Users/kazurayam/tmp/ReactInputField-0.1.0/my-next-app
+
+$ npm run dev
+```
+
+The server will start up in 10 seconds:
+
+```
+$ npm run dev
+
+> my-next-app@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.7
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 5.4s
+```
+
+Now you can visit http://localhost:3000. You will look see the page like this:
+
+![my-next-app](https://kazurayam.github.io/ReactInputField/images/my-next-app.png)
+
+This is what I wanted to see on my machine.
+
+This page is a mimic of a sample in the official React documentation: https://react.dev/learn/typescript#typing-dom-events
+
+As you can easily find, the 2 pages have different style. But both has a `<input>` element and a `<p>` element rendered by React.js. I expect that the mimic page at http://localhost:3000 will function as the original https://react.dev/learn/typescript#typing-dom-events as far as DOM Event is concerned. I would be satisfied with it.
 
 
 ## How to make the subprojects from scratch
