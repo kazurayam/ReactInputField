@@ -167,7 +167,7 @@ We are interested in only a single file: **`my-next-app/src/app/page.tsx`**. The
 
 Please open the `my-next-app/src/app/page.tsx` file with your favorite text editor. *Remove all the lines. Make the `page.tsx` file empty!*
 
-Then, you want to copy and paste [page.txt](https://github.com/kazurayam/ReactInputField/blob/develop/NextAppSrc/src/app/page.tsx) I created, which is as follows:
+Then, you want to copy and paste the [code of page.txt](https://github.com/kazurayam/ReactInputField/blob/develop/NextAppSrc/src/app/page.tsx) that I created, which is as follows:
 
 ```
 'use client';
@@ -224,18 +224,19 @@ This is what I wanted to see on my machine.
 
 This page is a mimic of a sample in the official React documentation: https://react.dev/learn/typescript#typing-dom-events
 
-As you can easily see, the 2 pages have different style. But both has a `<input>` element and a `<p>` element rendered by React.js. The `<input>` has `onChange` event-hander defined, which will update the `<p>` content as soon as you type a text into the `<input>`. I would be able to reproduce the problem discussed at the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083) with this local URL.
+As you can easily see, the 2 pages look different, but both has the same DOM structure and JS event handlers. Both have an `<input>` element and a `<p>` element rendered by React.js. The `<input>` has `onChange` event-hander defined, which should update the `<p>` content as soon as you type a text into the `<input>`. With this URL in action, I would be able to reproduce the problem discussed at the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083).
 
 ## Reproducing the problem of Katalon Recorder
-
-Now that the AUT http://localhost:3000 is running on my machine, I will try to reproduce the problem reported at
-the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083).
 
 I have developed a test script for Katalon Recorder:
 
 - [KRtest](https://github.com/kazurayam/ReactInputField/blob/develop/e2e_KatalonRecorder/TestLocalReactInputField.krecorder)
 
-When I ran this test, the test failed. Why? Katalon Recorder sent a text "Hooah" into the `<input onChange="...">` element, which seems to be accepted. I would expect the same text is trasfered into the sibling `<p>` element. But, apparently the `onChange` event handler was not triggered.
+When I ran this test, the test failed.
+
+![KR issue](https://kazurayam.github.io/ReactInputField/images/KatalonRecorderIssue.png)
+
+Why? Katalon Recorder sent a text "Hooah" into the `<input onChange="...">` element, which seems to be accepted. I would expect the same text is trasfered into the sibling `<p>` element. But, apparently the `onChange` event handler was not triggered.
 
 So, I agree with the original poster of the the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083). Katalon Recorder has a problem.
 
