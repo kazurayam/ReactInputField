@@ -444,4 +444,4 @@ Playwright worked fine.
 
 2. Using this local server, I could reproduce the problem of Katalon Recorder as discussed at "[KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083)". I found Katalon Recorder has a problem that should be addressed by Katalon.
 
-3. I enjoyed developing a test for React app using Playwright. Through this experiment, I was impressed that Playwright is the best tool to test modern JavaScript-based apps. I suppose that Playwright would be good at Angular and Vue.js as well, though I am not capable to work on those other JavaScript frameworks.
+3. I enjoyed developing a test for React app using Playwright. Through this experiment, I was impressed that Playwright is the best tool to test modern JavaScript web apps.
