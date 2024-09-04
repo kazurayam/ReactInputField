@@ -352,7 +352,7 @@ Happy hacking! 🎭
 
 In the `e2e_Playwright` directory, there are lots of files and directories automatically layed out, but you do not need to worry about them.
 
-You want to add a new file [e2e_Playwright/tests/page.specs.ts](https://github.com/kazurayam/ReactInputField/blob/develop/e2e_Playwright/tests/page.spec.ts). The content is as follows:
+You want to add a new file `e2e_Playwright/tests/page.specs.ts`. You can copy and paste [this code](https://github.com/kazurayam/ReactInputField/blob/develop/PlaywrightTestSrc/tests/page.spec.ts) that I created. The content is as follows:
 
 ```
 import test, { expect } from "playwright/test";
