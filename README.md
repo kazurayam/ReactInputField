@@ -27,7 +27,7 @@ In the "KR+React issue", @guy.mason wrote
 
 I wanted to reproduce on my machine what's reported by @Rob1 and @guy.mason, and I found it was not very easy.
 
-I find a growing number of topics (questions and bug reports) about E2E testing for React apps in the Katalon User Forum. Now I would argue that there is a common shortcoming in those topics. The topic-posters talk about what they encountered in their own environment, and they tend to disclose no guidance how to reproduce the incident on other environments.
+I find a growing number of topics (questions and bug reports) about E2E testing for React apps in the Katalon User Forum. Now I would argue that there is a common shortcoming in those topics. The topic-posters talk about what they encountered in their own environment, and **they tend to disclose no guidance how to reproduce the incident in the environments of someone else**.
 
 Why they don't do that? I suppse, because their React apps as AUT (*Application Under Test*) run inside their private network so that the posters can not tell others: "Please have a look at this URL on the Internet for this incident".
 
