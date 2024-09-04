@@ -216,7 +216,7 @@ $ npm run dev
  ✓ Ready in 5.4s
 ```
 
-Now you can visit http://localhost:3000. You will look see the page like this:
+Now you can visit http://localhost:3000. You will see a page like this:
 
 ![my-next-app](https://kazurayam.github.io/ReactInputField/images/my-next-app.png)
 
