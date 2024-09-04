@@ -43,7 +43,7 @@ With [Node.js](https://nodejs.org/en) installed, I can easily launch a React app
 
 3. For example, I refered to the source of App.tsx at https://react.dev/learn/typescript#typing-dom-events, titled as "DOM Events", which demonstrates an `<input onChange="...">`. This could be an appropriate AUT to reproduce the "KR+React issue".
 
-4. Thus a React-power web page will be availabe at http://localhost:3000. With this URL as AUT, I can create a set of E2E tests using any testing tools. I have created a set of demonstrative codes of Katalon Recorder, Katalon Studio and Playwright.
+4. Thus a React-powered web page will be available at http://localhost:3000. With this URL as AUT, I can create a set of E2E tests using any testing tools. I have created a set of demonstrative codes of Katalon Recorder, Katalon Studio and Playwright.
 
 ## Prerequisites
 
