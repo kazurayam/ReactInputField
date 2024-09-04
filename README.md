@@ -224,7 +224,7 @@ This is what I wanted to see on my machine.
 
 This page is a mimic of a sample in the official React documentation: https://react.dev/learn/typescript#typing-dom-events
 
-As you can easily see, the 2 pages look different, but both has the same DOM structure and JS event handlers. Both have an `<input>` element and a `<p>` element rendered by React.js. The `<input>` has `onChange` event-hander defined, which should update the `<p>` content as soon as you type a text into the `<input>`. With this URL in action, I would be able to reproduce the problem discussed at the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083).
+As you can easily see, the 2 pages look different, but both has the same DOM structure and JavaScript event handlers. Both have an `<input>` element and a `<p>` element rendered by React.js. The `<input>` has `onChange` event-handler defined, which should update the `<p>` content as soon as you type a text into the `<input>`. With this URL in action, I would be able to reproduce the problem discussed at the [KR+React issue](https://forum.katalon.com/t/serious-recorder-bug-does-not-work-with-react/143083).
 
 ## Reproducing the problem of Katalon Recorder
 
