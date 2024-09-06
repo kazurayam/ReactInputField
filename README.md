@@ -440,7 +440,7 @@ I ran a command `npx playwright show-report`, which opend a new browser window w
 
 Playwright worked very quickly. It reported something interesting, which I am not going to talk about as is off topic.
 
-## Concolusion
+## Conclusion
 
 1. I could build a local server that serves an URL http://localhost:3000, which can potentially host any React-powered pages. Next.js makes the setup job easy.
 
