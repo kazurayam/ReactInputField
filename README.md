@@ -31,7 +31,7 @@ I find a growing number of topics (questions and bug reports) about E2E testing 
 
 Why they don't do that? I suppse, because their React apps as AUT (*Application Under Test*) run inside their private network so that the posters can not tell others "Please have a look at this URL on the Internet".
 
-I would argue, however, I can never understand the problems unless I can see the problem is reproduced with a live URL accessble on my machine. Therefore I want to lauch a React-based AUT locally on my machine. How can I do it?
+I would argue, however, I can never understand the problems unless I can see the problem is reproduced with a live URL accessble on my machine. Therefore I want to launch a React-based AUT locally on my machine. How can I do it?
 
 ## Proposed Solution
 
