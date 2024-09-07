@@ -11,7 +11,7 @@
 1. The [e2e_KatalonRecorder](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonRecorder) subproject contains a serialized test code for [Katalon Recorder](https://katalon.com/katalon-recorder-ide), that targets the URL http://localhost:3000 .
 2. The [e2e_KatalonStudio](https://github.com/kazurayam/ReactInputField/tree/develop/e2e_KatalonStudio) subproject contains a [Katalon Studio](https://katalon.com/katalon-studio) project that targets the same local URL.
 3. The [NextAppSrc](https://github.com/kazurayam/ReactInputField/tree/develop/NextAppSrc) subdirectory contains a single TypeScript `page.tsx`. Later you will create a Next.js project, and then you will copy & paste this `page.tsx` into the newly created Next.js project.
-4. The [PlaywrightTestSrc](https://github.com/kazurayam/ReactInputField/tree/develop/PlaywrightTestSrc) subproject contains a single TypeScript `page.spec.ts`. Later will will create a Playwright project, and then you will copy & page this `page.spec.ts` into the newly created Playwright project.
+4. The [PlaywrightTestSrc](https://github.com/kazurayam/ReactInputField/tree/develop/PlaywrightTestSrc) subproject contains a single TypeScript `page.spec.ts`. Later you will create a Playwright project, and then you will copy & page this `page.spec.ts` into the newly created Playwright project.
 
 Provided that you have setup your machine with [Node.js](https://nodejs.org/en) and other external resources appropriately, you can reproduce a problem on your machine, which was discussed in the Katalon user forum at:
 
