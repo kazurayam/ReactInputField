@@ -90,7 +90,7 @@ Need to install the following packages:
 create-next-app@14.2.13
 Ok to proceed? (y) y
 
-✔ What is your project named? … app
+✔ What is your project named? … my-next-app
 ✔ Would you like to use TypeScript? … Yes
 ✔ Would you like to use ESLint? … Yes
 ✔ Would you like to use Tailwind CSS? … Yes
