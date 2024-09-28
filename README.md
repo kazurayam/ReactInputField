@@ -85,9 +85,9 @@ Now I will create a new Next.js project named `my-next-app`. It is done by a sin
 >The `npx` command is bundled in Node.js. You MUST have Node.js installed on your machine.
 
 ```
-$ npx create-next-app@latest
+$ npx create-next-app@14.2.7
 Need to install the following packages:
-create-next-app@14.2.13
+create-next-app@14.2.7
 Ok to proceed? (y) y
 
 ✔ What is your project named? … my-next-app
