@@ -85,17 +85,21 @@ Now I will create a new Next.js project named `my-next-app`. It is done by a sin
 >The `npx` command is bundled in Node.js. You MUST have Node.js installed on your machine.
 
 ```
-$ npx create-react-app my-next-app
+$ npx create-next-app@latest
+Need to install the following packages:
+create-next-app@14.2.13
+Ok to proceed? (y) y
 
-✔ Would you like to use TypeScript? … No / Yes
-✔ Would you like to use ESLint? … No / Yes
-✔ Would you like to use Tailwind CSS? … No / Yes
-✔ Would you like to use `src/` directory? … No / Yes
-✔ Would you like to use App Router? (recommended) … No / Yes
-✔ Would you like to customize the default import alias (@/*)? … No / Yes
+✔ What is your project named? … app
+✔ Would you like to use TypeScript? … Yes
+✔ Would you like to use ESLint? … Yes
+✔ Would you like to use Tailwind CSS? … Yes
+✔ Would you like to use `src/` directory? … Yes
+✔ Would you like to use App Router? (recommended) … Yes
+✔ Would you like to customize the default import alias (@/*)? … No
 ```
 
-The "npx create-react-app" command takes a few minuites to finish.
+The "npx create-next-app" command takes a few minuites to finish.
 
 ```
 Creating a new Next.js app in /Users/kazuakiurayama/tmp/ReactInputField-0.1.0/my-next-app.
